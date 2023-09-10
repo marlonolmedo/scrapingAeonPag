@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  pythonn:
+    build: .
+    image: costumpython:v1
+    networks:
+      - pythonNetwork
+    ports:
+      - "80:80"
+      - "8080:8080"
+    volumes:
+      - "./codes:/codes"
+    stdin_open: 
+      true
+    tty: 
+      true
+
+  
+networks:
+  pythonNetwork:
